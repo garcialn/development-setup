@@ -9,4 +9,5 @@ Configuration and dot-files for fast and easy development setup of the following
 - Espanso
 - DVC
 ---
-Use `sudo apt install` to install `nala`, `zoxide`, `lsd` and `zinit`.
+Use `sudo apt install` to install `nala`, `zoxide`, `lsd`, `zinit` and `stow`.
+After that, use the command `stow */` to create the correct symlinks.
