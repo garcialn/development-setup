@@ -1,0 +1,15 @@
+matches:
+- trigger: ':date:'
+  replace: '{{mytime}}'
+- trigger: ':now:'
+  replace: '{{mytime}}'
+- trigger: ':dates:'
+  replace: '{{mytime}}'
+- trigger: ':shell:'
+  replace: '{{output}}'
+- trigger: ':ups:'
+  replace: sudo nala update && sudo nala upgrade -y
+- trigger: ':gpush:'
+  replace: git push origin main
+- trigger: ':gcommit:'
+  replace: git add . && git commit
