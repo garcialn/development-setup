@@ -83,10 +83,35 @@ vim.opt.colorcolumn = '80'
 -- Always show the sign column
 vim.opt.signcolumn = 'yes'
 
---Always keep 8 lines above/below cursor, but star/end of file
+-- Always keep 8 lines above/below cursor, but star/end of file
 vim.opt.scrolloff = 15
 
 vim.opt.cole = 2
+
+-- Diagnostics configuration
+vim.diagnostic.config {
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = ' ',
+      [vim.diagnostic.severity.WARN] = ' ',
+      [vim.diagnostic.severity.INFO] = ' ',
+      [vim.diagnostic.severity.HINT] = '󰛨 ',
+    },
+    -- linehl = {
+    --   [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+    --   [vim.diagnostic.severity.WARN] = 'xota',
+    --   [vim.diagnostic.severity.INFO] = 'pussy',
+    --   [vim.diagnostic.severity.HINT] = 'uuuu',
+    -- },
+    -- numhl = {
+    --   [vim.diagnostic.severity.WARN] = 'WarningMsg',
+    --   [vim.diagnostic.severity.WARN] = 'chota',
+    --   [vim.diagnostic.severity.INFO] = 'bussy',
+    --   [vim.diagnostic.severity.HINT] = 'oooo',
+    -- },
+  },
+}
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
