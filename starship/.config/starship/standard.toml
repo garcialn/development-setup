@@ -552,7 +552,7 @@ disabled = true
 format = "[$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = " "
-style = "italic blue"
+style = "italic bold blue"
 lua_binary = "lua"
 disabled = false
 detect_extensions = ["lua"]
@@ -706,7 +706,7 @@ Windows = "🪟 "
 [package]
 format = "[$symbol$version]($style) "
 symbol = " "
-style = "italic orange"
+style = "italic bold orange"
 display_private = false
 disabled = false
 version_format = "v${raw}"
@@ -771,7 +771,7 @@ pyenv_prefix = "pyenv "
 python_binary = ["python", "python3", "python2"]
 format = '[$symbol($version )( $virtualenv)]($style)'
 version_format = "v${raw}"
-style = "yellow italic"
+style = "yellow bold italic"
 symbol = " "
 disabled = false
 detect_extensions = ["py"]
@@ -838,20 +838,20 @@ detect_folders = []
 detect_variables = ["RUBY_VERSION", "RBENV_VERSION"]
 
 [rust]
-format = "via [$symbol($version )]($style)"
+format = "[$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = " "
-style = "bold orange"
+style = "italic bold orange"
 disabled = false
 detect_extensions = ["rs"]
 detect_files = ["Cargo.toml"]
 detect_folders = []
 
 [scala]
-format = "via [$symbol($version )]($style)"
+format = "[$symbol($version )]($style)"
 version_format = "v${raw}"
 disabled = false
-style = "red bold"
+style = "red italic bold"
 symbol = " "
 detect_extensions = ["sbt", "scala"]
 detect_files = [".scalaenv", ".sbtenv", "build.sbt"]
