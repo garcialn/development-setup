@@ -96,6 +96,7 @@ alias ls="lsd"
 alias cd="z"
 alias c="clear"
 alias zel="zellij"
+alias anal="nala"
 
 # Tmux plugin configuration
 export ZSH_TMUX_AUTOSTART="true"

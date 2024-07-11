@@ -1,6 +1,6 @@
 -- Set <space> as the leader key
 -- See `:help mapleader`
---  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+-- NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -749,6 +749,7 @@ require('lazy').setup({
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          { name = 'buffer', keyword_length = 10 },
         },
       }
     end,
@@ -792,29 +793,31 @@ require('lazy').setup({
         FIX = {
           icon = ' ', -- icon used for the sign, and in search results
           color = 'error', -- can be a hex color, or a named color (see below)
-          alt = { 'FIXME', 'BUG', 'FIXIT', 'ISSUE' }, -- a set of other keywords that all map to this FIX keywords
+          alt = { 'BUG', 'FIXIT', 'ISSUE' }, -- a set of other keywords that all map to this FIX keywords
           -- signs = false, -- configure signs for some keywords individually
         },
-        TODO = { icon = ' ', color = 'info' },
-        HACK = { icon = ' ', color = 'warning' },
+        TODO = { icon = ' ', color = 'todo' },
+        HINT = { icon = '󰈸 ', color = 'hint' },
         WARN = { icon = ' ', color = 'warning', alt = { 'WARNING', 'XXX' } },
-        PERF = { icon = '󱎫 ', color = 'test', alt = { 'OPTIM', 'PERFORMANCE', 'OPTIMIZE' } },
-        NOTE = { icon = ' ', color = 'hint', alt = { 'INFO' } },
+        INFO = { icon = ' ', color = 'info', alt = { 'NOTE' } },
         TEST = { icon = '󰙨 ', color = 'test', alt = { 'TESTING', 'PASSED', 'FAILED' } },
+        PERF = { icon = '󱎫 ', color = 'perf', alt = { 'OPTIM', 'PERFORMANCE', 'OPTIMIZE' } },
       },
       -- FIX:
       -- TODO:
-      -- HACK:
+      -- HINT:
       -- WARN:
       -- PERF:
+      -- INFO:
       -- TEST:
       colors = {
-        error = { 'DiagnosticError', 'ErrorMsg', 'FF4646' },
-        warning = { 'DiagnosticWarn', 'WarningMsg', '#FF5F00' },
-        info = { 'DiagnosticInfo', '#D2E603' },
-        hint = { 'DiagnosticHint', '#28DF99' },
-        default = { 'Identifier', '#7C3AED' },
-        test = { 'Identifier', '#FFEA20' },
+        error = { '#FF204E' }, --'DiagnosticError', 'ErrorMsg',
+        todo = { '#FFCC29' }, --'Identifier',
+        hint = { '#00FF9A' }, --'DiagnosticHint',
+        warning = { '#FF5200' }, --'DiagnosticWarn', 'WarningMsg',
+        info = { '#00F0FF' }, --'DiagnosticInfo',
+        test = { '#6F61C0' }, --'Identifier',
+        perf = { '#A084E8' }, --'Identifier',
       },
     },
   },
