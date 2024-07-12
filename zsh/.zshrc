@@ -91,11 +91,14 @@ plugins=(
 
 ### MINE ALIASES
 alias nv="nvim"
+alias vim="nvim"
+alias v="nvim"
 alias tx="tmux"
 alias ls="lsd"
 alias cd="z"
 alias c="clear"
 alias zel="zellij"
+alias zj="zellij"
 alias anal="nala"
 
 # Tmux plugin configuration
@@ -187,3 +190,7 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
