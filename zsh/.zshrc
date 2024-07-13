@@ -67,11 +67,11 @@ plugins=(
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nvim'
+else
+  export EDITOR='mvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -156,19 +156,18 @@ zinit light zsh-users/zsh-completions
 zinit light Aloxaf/fzf-tab
 
 # Load zsh-completions
-# autoload -U compinit && compinit
-
-# Keybindings
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
+autoload -U compinit && compinit
 
 # Completion styling
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 autoload -Uz compinit && compinit
+setopt MENU_COMPLETE
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' meno no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls $realpath'
+
+# TODO: check if fzf versions of shell and nvim are not problematic to be used in both tools
+# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls $realpath'
+# zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls $realpath'
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
@@ -178,18 +177,22 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls $realpath'
 # Uncomment the following line to change how often to auto-update (in days).
 # zstyle ':omz:update' frequency 13
 
-# History
-HISTSIZE=5000
-HISTFILE=~/.zsh_history
-SAVEHIST=$HISTSIZE
-HISTDEP=erase
-setopt appendhistory
-setopt sharehistory
-setopt hist_ignore_space
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_ignore_dups
-setopt hist_find_no_dups
+# INFO: History is now all commented since ATUIN is now the standard history application
+# HISTSIZE=5000
+# HISTFILE=~/.zsh_history
+# SAVEHIST=$HISTSIZE
+# HISTDEP=erase
+# setopt appendhistory
+# setopt sharehistory
+# setopt hist_ignore_space
+# setopt hist_ignore_all_dups
+# setopt hist_save_no_dups
+# setopt hist_ignore_dups
+# setopt hist_find_no_dups
+# History Keybindings
+# bindkey '^p' history-search-backward
+# bindkey '^n' history-search-forward
+
 
 . "$HOME/.atuin/bin/env"
 
