@@ -796,8 +796,8 @@ require('lazy').setup({
           alt = { 'BUG', 'FIXIT', 'ISSUE' }, -- a set of other keywords that all map to this FIX keywords
           -- signs = false, -- configure signs for some keywords individually
         },
-        TODO = { icon = ' ', color = 'todo' },
-        HINT = { icon = '󰈸 ', color = 'hint' },
+        TODO = { icon = ' ', color = 'todo' },
+        HINT = { icon = '󰛨 ', color = 'hint' },
         WARN = { icon = ' ', color = 'warning', alt = { 'WARNING', 'XXX' } },
         INFO = { icon = ' ', color = 'info', alt = { 'NOTE' } },
         TEST = { icon = '󰙨 ', color = 'test', alt = { 'TESTING', 'PASSED', 'FAILED' } },
