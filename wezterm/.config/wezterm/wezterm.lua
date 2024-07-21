@@ -4,6 +4,8 @@ local wezterm = require("wezterm")
 local config = {}
 config.window_decorations = "TITLE | RESIZE"
 config.color_scheme = "Vs Code Dark+ (Gogh)"
+-- "Catppuccin Mocha (Gogh)"
+-- "Catppuccin Mocha"
 -- config.window_background_opacity = 0.1
 -- config.text_background_opacity = 1
 -- config.win32_system_backdrop = "Acrylic"
@@ -12,7 +14,7 @@ config.use_cap_height_to_scale_fallback_fonts = true
 config.font_size = 12
 config.window_padding = {
 	left = 2,
-	right = 0,
+	right = 3,
 	top = 0,
 	bottom = 0,
 }

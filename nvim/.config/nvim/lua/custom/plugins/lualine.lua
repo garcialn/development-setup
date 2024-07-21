@@ -1,14 +1,14 @@
 return {
   {
     'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons', 'letieu/harpoon-lualine' },
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     event = 'VeryLazy',
     config = function()
       require('lualine').setup {
         options = {
           icons_enabled = true,
           globalstatus = true,
-          theme = 'vscode',
+          theme = 'vscode', --'catppuccin-mocha'
           component_separators = { left = '|', right = '|' },
           section_separators = { left = '', right = '' },
           refresh = {
@@ -34,9 +34,9 @@ return {
               'diff',
               diff_color = {
                 -- Same values as the general color option can be used here.
-                added = { fg = '4EF037' }, -- Changes diagnostics' error color.
-                modified = { fg = 'FFEA20' }, -- Changes diagnostics' warn color.
-                removed = { fg = 'FF4949' }, -- Changes diagnostics' info color.
+                added = { fg = '#6FFF6F' }, -- Changes diagnostics' error color.
+                modified = { fg = '#FFEA20' }, -- Changes diagnostics' warn color.
+                removed = { fg = '#FF4949' }, -- Changes diagnostics' info color.
               },
               colored = true,
               sections = { 'added', 'modified', 'removed' },
@@ -58,7 +58,13 @@ return {
               symbols = { error = ' ', warn = ' ', info = ' ', hint = '󰛨 ' },
             },
           },
-          lualine_x = { 'harpoon2' },
+          lualine_x = {
+            {
+              'harpoon2',
+              icon = ' ',
+              no_harpoon = ' ',
+            },
+          },
           lualine_y = {
             'filetype',
           },

@@ -93,6 +93,7 @@ fi
 alias nv="nvim"
 alias vim="nvim"
 alias v="nvim"
+alias vi="nvim"
 alias tx="tmux"
 alias ls="lsd"
 alias cd="z"
@@ -193,7 +194,20 @@ zstyle ':completion:*' meno no
 # bindkey '^p' history-search-backward
 # bindkey '^n' history-search-forward
 
-
+# Atuin modifications
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
+
+# fzf modifications
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Yazi modifications
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}

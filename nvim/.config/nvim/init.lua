@@ -1,3 +1,7 @@
+-- HINT:Session for tips and hints on nvim
+-- If you'd like to keep undotree for longer than a session, you can use
+-- `:wundo foo.undo` and `:rundo foo.undo` to reload saved undotree file.
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 -- NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -260,7 +264,7 @@ require('lazy').setup({
       require('which-key').setup()
 
       -- Document existing key chains
-      require('which-key').register {
+      require('which-key').add {
         ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
         ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
         ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
@@ -270,7 +274,7 @@ require('lazy').setup({
         ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
       }
       -- visual mode
-      require('which-key').register({
+      require('which-key').add({
         ['<leader>h'] = { 'Git [H]unk' },
       }, { mode = 'v' })
     end,
@@ -545,6 +549,7 @@ require('lazy').setup({
       --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+      -- TODO: Add kotlin needs when developing for  Android Mobile
       local servers = {
         -- clangd = {},
         -- gopls = {},
@@ -769,13 +774,13 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'Mofiqul/vscode.nvim',
+    'Mofiqul/vscode.nvim', -- 'catppuccin/nvim'
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'vscode'
+      vim.cmd.colorscheme 'vscode' --'catppuccin-mocha'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
@@ -920,16 +925,16 @@ require('lazy').setup({
     -- If you are using a Nerd Font: set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
     icons = vim.g.have_nerd_font and {} or {
-      cmd = '⌘',
-      config = '🛠',
+      cmd = '📢',
+      config = '🔨',
       event = '📅',
       ft = '📂',
-      init = '⚙',
-      keys = '🗝',
+      init = '⚙️',
+      keys = '🔑',
       plugin = '🔌',
-      runtime = '💻',
-      require = '🌙',
-      source = '📄',
+      runtime = '⏱️',
+      require = '🚨',
+      source = '📑',
       start = '🚀',
       task = '📌',
       lazy = '💤 ',
