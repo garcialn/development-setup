@@ -23,18 +23,17 @@ return {
     --    --> Replace
     --    --> Sort
 
-    -- FIX: Key binding problems with tmux
     require('mini.move').setup()
     --    --> Move selections arround
 
     --require('mini.git').setup()
     --    -- Git integration
 
-    -- PERF: New addition, keep eyes on performance
-    require('mini.animate').setup()
+    -- PERF: I liked the results, but while using 4gb of RAM, gonna leave it off...
+    -- require('mini.animate').setup()
     --     -- Nvim animation
 
-    -- require('mini.cursorword').setup()
+    require('mini.cursorword').setup()
     --     -- Highlight same words under the cursor
 
     require('mini.ai').setup { n_lines = 500 }

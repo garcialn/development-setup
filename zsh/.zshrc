@@ -95,7 +95,10 @@ alias vim="nvim"
 alias v="nvim"
 alias vi="nvim"
 alias tx="tmux"
+alias tmux="tmux new -s "
 alias ls="lsd"
+alias l="lsd"
+alias lt="lsd --tree"
 alias cd="z"
 alias c="clear"
 alias zel="zellij"
@@ -211,3 +214,5 @@ function yy() {
 	fi
 	rm -f -- "$tmp"
 }
+export PATH=$PATH:/usr/local/nvim/bin
+export PATH=$PATH:/usr/local/nvim/bin

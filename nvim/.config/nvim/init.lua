@@ -125,6 +125,9 @@ vim.keymap.set('n', '<M-Down>', '<C-w>-')
 vim.keymap.set('n', '<M-Up>', '<C-w>+')
 vim.keymap.set('n', '<M-Right>', '<C-w>5<')
 vim.keymap.set('n', '<M-Left>', '<C-w>5>')
+vim.keymap.set('n', '<leader>i', function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end)
 
 -- Undotree
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Toggle Undotree' })
@@ -817,12 +820,12 @@ require('lazy').setup({
       -- TEST:
       colors = {
         error = { '#FF204E' }, --'DiagnosticError', 'ErrorMsg',
-        todo = { '#FFCC29' }, --'Identifier',
+        todo = { '#FAEF5D' }, --'Identifier',
         hint = { '#00FF9A' }, --'DiagnosticHint',
         warning = { '#FF5200' }, --'DiagnosticWarn', 'WarningMsg',
-        info = { '#00F0FF' }, --'DiagnosticInfo',
-        test = { '#6F61C0' }, --'Identifier',
-        perf = { '#A084E8' }, --'Identifier',
+        info = { '#45FFCA' }, --'DiagnosticInfo',
+        test = { '#EBF400' }, --'Identifier',
+        perf = { '#AF47D2' }, --'Identifier',
       },
     },
   },

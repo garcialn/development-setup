@@ -1,0 +1,14 @@
+[manager]
+ratio = [2, 4, 4]
+scrolloff = 200
+
+[preview]
+image_filter = 'lanczos3'
+cache_dir = '$HOME/Imagens/.yazi'
+image_quality = 90
+
+[opener]
+edit = [{ run = 'nvim "$@"', orphan = true }]
+
+[open]
+prepend_rules = [{ name = "*.json", use = "edit" }]
