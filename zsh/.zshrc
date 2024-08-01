@@ -95,7 +95,6 @@ alias vim="nvim"
 alias v="nvim"
 alias vi="nvim"
 alias tx="tmux"
-alias tmux="tmux new -s "
 alias ls="lsd"
 alias l="lsd"
 alias lt="lsd --tree"
@@ -163,15 +162,15 @@ zinit light Aloxaf/fzf-tab
 autoload -U compinit && compinit
 
 # Completion styling
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 autoload -Uz compinit && compinit
 setopt MENU_COMPLETE
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' meno no
 
 # TODO: check if fzf versions of shell and nvim are not problematic to be used in both tools
-# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls $realpath'
-# zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls $realpath'
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
