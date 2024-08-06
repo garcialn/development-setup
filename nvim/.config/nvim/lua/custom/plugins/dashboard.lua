@@ -21,18 +21,20 @@ return {
             action = 'Telescope find_files',
             key = 'f',
           },
-          {
-            desc = ' Apps',
-            group = 'DiagnosticHint',
-            action = 'Telescope app',
-            key = 'a',
-          },
-          {
-            desc = ' dotfiles',
-            group = 'Number',
-            action = 'Telescope dotfiles',
-            key = 'd',
-          },
+          -- FIX: Check for the correct command for `search-NeovimFiles`
+          -- {
+          --   desc = ' Apps',
+          --   group = 'DiagnosticHint',
+          --   action = 'Telescope app',
+          --   key = 'a',
+          -- },
+          -- FIX: Check for the correct commmand for Search .config/
+          -- {
+          --   desc = ' dotfiles',
+          --   group = 'Number',
+          --   action = 'Telescope dotfiles',
+          --   key = 'd',
+          -- },
         },
         packages = { enable = true }, -- show how many plugins neovim loaded
         -- limit how many projects list, action when you press key or enter it will run this action.

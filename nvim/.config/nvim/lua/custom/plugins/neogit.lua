@@ -6,5 +6,9 @@ return {
     -- Only one of these is needed, not both.
     'nvim-telescope/telescope.nvim', -- optional
   },
-  config = true,
+  config = function()
+    require('neogit').setup {
+      graph_style = 'unicode',
+    }
+  end,
 }

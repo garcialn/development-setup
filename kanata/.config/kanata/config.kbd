@@ -1,0 +1,16 @@
+;; Kanata config for <CAPSLCK> to CAPSLCK+CTRL
+
+(defsrc
+  caps
+  alt
+)
+
+(defalias
+  capsctrl (tap-hold 200 200 caps lctrl)
+  altesc (tap-hold 100 100 esc alt )
+)
+
+(deflayer base
+  @capsctrl
+  @altesc
+)

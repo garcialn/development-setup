@@ -121,10 +121,10 @@ vim.diagnostic.config {
 
 -- MINE custom keymaps
 vim.keymap.set('n', '<Enter>', 'i')
-vim.keymap.set('n', '<M-Down>', '<C-w>-')
-vim.keymap.set('n', '<M-Up>', '<C-w>+')
-vim.keymap.set('n', '<M-Right>', '<C-w>5<')
-vim.keymap.set('n', '<M-Left>', '<C-w>5>')
+vim.keymap.set('n', '<M-Down>', '<C-w>+')
+vim.keymap.set('n', '<M-Up>', '<C-w>-')
+vim.keymap.set('n', '<M-Right>', '<C-w>5>')
+vim.keymap.set('n', '<M-Left>', '<C-w>5<')
 vim.keymap.set('n', '<leader>i', function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end)
@@ -171,10 +171,10 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<C-Left>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-Right>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-Down>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-Up>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+-- vim.keymap.set('n', '<C-Left>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+-- vim.keymap.set('n', '<C-Right>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+-- vim.keymap.set('n', '<C-Down>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+-- vim.keymap.set('n', '<C-Up>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -712,8 +712,8 @@ require('lazy').setup({
           ['<C-p>'] = cmp.mapping.select_prev_item(),
 
           -- Scroll the documentation window [b]ack / [f]orward
-          ['<C-Up>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-Down>'] = cmp.mapping.scroll_docs(4),
+          -- ['<C-Up>'] = cmp.mapping.scroll_docs(-4),
+          -- ['<C-Down>'] = cmp.mapping.scroll_docs(4),
 
           -- Accept ([y]es) the completion.
           --  This will auto-import if your LSP supports it.
@@ -823,7 +823,7 @@ require('lazy').setup({
         todo = { '#FAEF5D' }, --'Identifier',
         hint = { '#00FF9A' }, --'DiagnosticHint',
         warning = { '#FF5200' }, --'DiagnosticWarn', 'WarningMsg',
-        info = { '#45FFCA' }, --'DiagnosticInfo',
+        info = { '#6EACDA' }, --'DiagnosticInfo',
         test = { '#EBF400' }, --'Identifier',
         perf = { '#AF47D2' }, --'Identifier',
       },

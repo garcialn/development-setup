@@ -6,7 +6,15 @@ return {
   {
     'lewis6991/gitsigns.nvim',
     enabled = true,
+
     opts = {
+      signs = {
+        add = { text = ' ' },
+        change = { text = '󰏭 ' },
+        delete = { text = ' ' },
+        topdelete = { text = ' ' },
+        changedelete = { text = ' ' },
+      },
       current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
       current_line_blame_opts = {
         virt_text = true,
@@ -63,8 +71,8 @@ return {
           gitsigns.diffthis '@'
         end, { desc = 'git [D]iff against last commit' })
         -- Toggles
-        map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
-        map('n', '<leader>tD', gitsigns.toggle_deleted, { desc = '[T]oggle git show [D]eleted' })
+        map('n', '<leader>gtb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
+        map('n', '<leader>gtd', gitsigns.toggle_deleted, { desc = '[T]oggle git show [d]eleted' })
       end,
     },
   },
