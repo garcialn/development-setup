@@ -44,7 +44,7 @@ return {
     --     --  - yinq - [Y]ank [I]nside [N]ext [']quote
     --     --  - ci'  - [C]hange [I]nside [']quote
 
-    -- FIX: Surround has started to conflict with (apparently) builtin func
+    -- XXX: Use `which-key` to define some guidings | Surround has started to conflict with (apparently) builtin func
     require('mini.surround').setup()
     --     -- Add/delete/replace surroundings (brackets, quotes, etc.)
     --     --

@@ -16,7 +16,7 @@ return {
             key = 'u',
           },
           {
-            desc = '󰈮 Files',
+            desc = '󰱼 Files',
             group = 'Label',
             action = 'Telescope find_files',
             key = 'f',
@@ -28,13 +28,12 @@ return {
           --   action = 'Telescope app',
           --   key = 'a',
           -- },
-          -- FIX: Check for the correct commmand for Search .config/
-          -- {
-          --   desc = ' dotfiles',
-          --   group = 'Number',
-          --   action = 'Telescope dotfiles',
-          --   key = 'd',
-          -- },
+          {
+            desc = '󱋡 Recent Files',
+            group = 'Number',
+            action = 'Telescope oldfiles',
+            key = 'r',
+          },
         },
         packages = { enable = true }, -- show how many plugins neovim loaded
         -- limit how many projects list, action when you press key or enter it will run this action.

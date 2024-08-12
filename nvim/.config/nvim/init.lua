@@ -52,7 +52,7 @@ vim.opt.updatetime = 250
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
-vim.opt.timeoutlen = 300
+vim.opt.timeoutlen = 3000
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
@@ -75,8 +75,8 @@ vim.opt.scrolloff = 10
 
 -- NVIM-TREE setup
 -- disable netrw at the very start of your init.lua
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
 
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
@@ -125,9 +125,7 @@ vim.keymap.set('n', '<M-Down>', '<C-w>+')
 vim.keymap.set('n', '<M-Up>', '<C-w>-')
 vim.keymap.set('n', '<M-Right>', '<C-w>5>')
 vim.keymap.set('n', '<M-Left>', '<C-w>5<')
-vim.keymap.set('n', '<leader>i', function()
-  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-end)
+-- vim.keymap.set('n', '<leader>i', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end)
 
 -- Undotree
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Toggle Undotree' })
@@ -259,29 +257,6 @@ require('lazy').setup({
   -- Then, because we use the `config` key, the configuration only runs
   -- after the plugin has been loaded:
   --  config = function() ... end
-
-  { -- Useful plugin to show you pending keybinds.
-    'folke/which-key.nvim',
-    event = 'VimEnter', -- Sets the loading event to 'VimEnter'
-    config = function() -- This is the func that runs, AFTER loading
-      require('which-key').setup()
-
-      -- Document existing key chains
-      require('which-key').add {
-        ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-        ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-        ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-        ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
-        ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
-      }
-      -- visual mode
-      require('which-key').add({
-        ['<leader>h'] = { 'Git [H]unk' },
-      }, { mode = 'v' })
-    end,
-  },
 
   -- NOTE: Plugins can specify dependencies.
   --
@@ -807,7 +782,7 @@ require('lazy').setup({
         TODO = { icon = ' ', color = 'todo' },
         HINT = { icon = '󰛨 ', color = 'hint' },
         WARN = { icon = ' ', color = 'warning', alt = { 'WARNING', 'XXX' } },
-        INFO = { icon = ' ', color = 'info', alt = { 'NOTE' } },
+        INFO = { icon = '󰋼 ', color = 'info', alt = { 'NOTE' } },
         TEST = { icon = '󰙨 ', color = 'test', alt = { 'TESTING', 'PASSED', 'FAILED' } },
         PERF = { icon = '󱎫 ', color = 'perf', alt = { 'OPTIM', 'PERFORMANCE', 'OPTIMIZE' } },
       },
@@ -820,12 +795,12 @@ require('lazy').setup({
       -- TEST:
       colors = {
         error = { '#FF204E' }, --'DiagnosticError', 'ErrorMsg',
-        todo = { '#FAEF5D' }, --'Identifier',
-        hint = { '#00FF9A' }, --'DiagnosticHint',
+        todo = { '#EBF400' }, --'Identifier',
+        hint = { '#14C38E' }, --'DiagnosticHint',
         warning = { '#FF5200' }, --'DiagnosticWarn', 'WarningMsg',
-        info = { '#6EACDA' }, --'DiagnosticInfo',
-        test = { '#EBF400' }, --'Identifier',
-        perf = { '#AF47D2' }, --'Identifier',
+        info = { '#1CD6CE' }, --'DiagnosticInfo',
+        test = { '#548CFF' }, --'Identifier',
+        perf = { '#6F61C0' }, --'Identifier',
       },
     },
   },
