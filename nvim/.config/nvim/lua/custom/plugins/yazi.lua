@@ -6,7 +6,7 @@ return {
     keys = {
       -- 👇 in this section, choose your own keymappings!
       {
-        '+',
+        '-',
         function()
           require('yazi').yazi()
         end,

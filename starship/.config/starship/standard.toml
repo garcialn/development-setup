@@ -3,8 +3,10 @@
 # $all is shorthand for $username$hostname$localip$shlvl$singularity$kubernetes$nats$directory$vcsh$fossil_branch$fossil_metrics$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch$pijul_channel$docker_context$package$bun$c$cmake$cobol$daml$dart$deno$dotnet$elixir$elm$erlang$fennel$gleam$golang$gradle$haskell$haxe$helm$java$julia$kotlin$lua$nim$nodejs$ocaml$odin$opa$perl$php$pulumi$purescript$python$quarto$raku$rlang$red$ruby$rust$scala$solidity$swift$terraform$typst$vlang$vagrant$zig$buf$guix_shell$nix_shell$conda$meson$spack$memory_usage$aws$gcloud$openstack$azure$direnv$env_var$crystal$custom$sudo$cmd_duration$line_break$jobs$battery$time$status$container$os$shell$character
 
 "$schema" = "https://starship.rs/config-schema.json"
-format = "$os$directory$git_branch$git_commit$character"
-right_format = "$git_metrics$git_status$all"
+format = """
+$os$directory$git_branch$git_commit$git_metrics$git_status
+$character"""
+right_format = "$all"
 continuation_prompt = "❯"
 scan_timeout = 500
 command_timeout = 10000
@@ -92,12 +94,12 @@ commands = [["cc", "--version"], ["gcc", "--version"], ["clang", "--version"]]
 
 [character]
 format = "$symbol "
-success_symbol = "[❯](bold blink green)"
-error_symbol = "[❯](bold blink red)"
-vimcmd_symbol = "[❮](bold green)"
-vimcmd_visual_symbol = "[❮](bold yellow)"
-vimcmd_replace_symbol = "[❮](bold purple)"
-vimcmd_replace_one_symbol = "[❮](bold purple)"
+success_symbol = "[->](bold blink green)"
+error_symbol = "[->](bold blink red)"
+vimcmd_symbol = "[<-](bold green)"
+vimcmd_visual_symbol = "[<-](bold yellow)"
+vimcmd_replace_symbol = "[<-](bold purple)"
+vimcmd_replace_one_symbol = "[<-](bold purple)"
 disabled = false
 
 [cmake]
@@ -340,7 +342,7 @@ format = '[ $hash: ]($style) '
 style = "bold yellow"
 only_detached = true
 disabled = false
-tag_symbol = " 🏷  "
+tag_symbol = " 🏷 "
 tag_disabled = true
 tag_max_candidates = 0
 

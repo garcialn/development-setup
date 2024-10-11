@@ -49,9 +49,9 @@ return {
               diagnostics_color = {
                 -- Same values as the general color option can be used here.
                 error = { fg = 'FF5F5F' }, -- Changes diagnostics' error color.
-                warn = { fg = 'D2E603' }, -- Changes diagnostics' warn color.
+                warn = { fg = 'D7D7AF' }, -- Changes diagnostics' warn color.
                 info = { fg = '28DF99' }, -- Changes diagnostics' info color.
-                hint = { fg = '54E346' }, -- Changes diagnostics' hint color.
+                hint = { fg = '5FAFD7' }, -- Changes diagnostics' hint color.
               },
               colored = true,
               sections = { 'error', 'warn', 'info', 'hint' },

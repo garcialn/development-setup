@@ -101,18 +101,6 @@ vim.diagnostic.config {
       [vim.diagnostic.severity.INFO] = ' ',
       [vim.diagnostic.severity.HINT] = '󰛨 ',
     },
-    -- linehl = {
-    --   [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
-    --   [vim.diagnostic.severity.WARN] = 'xota',
-    --   [vim.diagnostic.severity.INFO] = 'pussy',
-    --   [vim.diagnostic.severity.HINT] = 'uuuu',
-    -- },
-    -- numhl = {
-    --   [vim.diagnostic.severity.WARN] = 'WarningMsg',
-    --   [vim.diagnostic.severity.WARN] = 'chota',
-    --   [vim.diagnostic.severity.INFO] = 'bussy',
-    --   [vim.diagnostic.severity.HINT] = 'oooo',
-    -- },
   },
 }
 
@@ -476,7 +464,7 @@ require('lazy').setup({
           --
           -- When you move your cursor, the highlights will be cleared (the second autocommand).
           local client = vim.lsp.get_client_by_id(event.data.client_id)
-          if client and client.server_capabilities.documentHighlightProvider then
+          if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
             local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
             vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
               buffer = event.buf,
@@ -488,6 +476,14 @@ require('lazy').setup({
               buffer = event.buf,
               group = highlight_augroup,
               callback = vim.lsp.buf.clear_references,
+            })
+
+            vim.api.nvim_create_autocmd('LspDetach', {
+              group = vim.api.nvim_create_augroup('kickstart-lsp-detach', { clear = true }),
+              callback = function(event2)
+                vim.lsp.buf.clear_references()
+                vim.api.nvim_clear_autocmds { group = 'kickstart-lsp-highlight', buffer = event2.buf }
+              end,
             })
           end
 
@@ -527,12 +523,12 @@ require('lazy').setup({
       --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
-      -- TODO: Add kotlin needs when developing for  Android Mobile
+      -- XXX: Add kotlin needs when developing for  Android Mobile
       local servers = {
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
-        rust_analyzer = {},
+        -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -729,11 +725,20 @@ require('lazy').setup({
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
         },
         sources = {
-          { name = 'nvim_lsp' },
+          { name = 'nvim-lsp' },
           { name = 'luasnip' },
           { name = 'path' },
-          { name = 'buffer', keyword_length = 10 },
+          { name = 'buffer' },
+          { name = 'emoji' },
         },
+
+        -- Vim-dadbod config
+        cmp.setup.filetype({ 'sql' }, {
+          sources = {
+            { name = 'vim-dadbod-completion' },
+            { name = 'buffer' },
+          },
+        }),
       }
     end,
   },
@@ -763,46 +768,6 @@ require('lazy').setup({
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
     end,
-  },
-
-  -- Highlight todo, notes, etc in comments
-  {
-    'folke/todo-comments.nvim',
-    event = 'VimEnter',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    opts = {
-      signs = true,
-      keywords = {
-        FIX = {
-          icon = ' ', -- icon used for the sign, and in search results
-          color = 'error', -- can be a hex color, or a named color (see below)
-          alt = { 'BUG', 'FIXIT', 'ISSUE' }, -- a set of other keywords that all map to this FIX keywords
-          -- signs = false, -- configure signs for some keywords individually
-        },
-        TODO = { icon = ' ', color = 'todo' },
-        HINT = { icon = '󰛨 ', color = 'hint' },
-        WARN = { icon = ' ', color = 'warning', alt = { 'WARNING', 'XXX' } },
-        INFO = { icon = '󰋼 ', color = 'info', alt = { 'NOTE' } },
-        TEST = { icon = '󰙨 ', color = 'test', alt = { 'TESTING', 'PASSED', 'FAILED' } },
-        PERF = { icon = '󱎫 ', color = 'perf', alt = { 'OPTIM', 'PERFORMANCE', 'OPTIMIZE' } },
-      },
-      -- FIX:
-      -- TODO:
-      -- HINT:
-      -- WARN:
-      -- PERF:
-      -- INFO:
-      -- TEST:
-      colors = {
-        error = { '#FF204E' }, --'DiagnosticError', 'ErrorMsg',
-        todo = { '#EBF400' }, --'Identifier',
-        hint = { '#14C38E' }, --'DiagnosticHint',
-        warning = { '#FF5200' }, --'DiagnosticWarn', 'WarningMsg',
-        info = { '#1CD6CE' }, --'DiagnosticInfo',
-        test = { '#548CFF' }, --'Identifier',
-        perf = { '#6F61C0' }, --'Identifier',
-      },
-    },
   },
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',

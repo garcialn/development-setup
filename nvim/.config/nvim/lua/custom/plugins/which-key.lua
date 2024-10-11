@@ -60,24 +60,28 @@ return {
     local wk = require 'which-key'
     wk.add {
       -- [LEADER] mappings
-      { '<leader>c', icon = ' ', group = '[C]ode' },
-      { '<leader>d', icon = '󰈙 ', group = '[D]ocument' },
-      { '<leader>r', icon = '󰑕 ', group = '[R]ename' },
-      { '<leader>s', icon = ' ', group = '[S]earch' },
-      { '<leader>w', icon = ' ', group = '[W]orkspace' },
-      { '<leader>t', icon = ' ', group = '[T]oggle' },
+      { '<leader>c', icon = ' ', group = '[c]ode' },
+      { '<leader>d', icon = '󰈙 ', group = '[d]ocument' },
+      { '<leader>r', icon = '󰑕 ', group = '[r]ename' },
+      { '<leader>s', icon = ' ', group = '[s]earch' },
+      { '<leader>w', icon = ' ', group = '[w]orkspace' },
+      { '<leader>t', icon = ' ', group = '[t]oggle' },
+      { '<leader>N', icon = ' ', group = '[N]otebook' },
+      { '<leader>n', icon = '󰊢 ', group = '[n]eogit' },
+      { '<leader>x', icon = '󰟃 ', group = 'E[x]tras' },
       {
         -- Nested mappings are allowed and can be added in any order
         -- Most attributes can be inherited or overridden on any level
         -- There's no limit to the depth of nesting
         mode = { 'n', 'v' }, -- NORMAL and VISUAL mode
-        { '<leader>h', icon = '󰊢 ', desc = 'Git [H]unk' }, -- no need to specify mode since it's inherited
+        { '<leader>h', icon = ' ', group = '[h]arpoon' }, -- no need to specify mode since it's inherited
+        { '<leader>g', icon = ' ', group = '[g]itsigns' }, -- no need to specify mode since it's inherited
       },
       -- [S]urrounding key Maps
-      { 'sa', icon = '', group = '[S]urround [A]dd' },
-      { 'sd', icon = '', group = '[S]urround [D]elete' },
-      { 'sr', icon = '', group = '[S]urround [R]eplace' },
-      { 'sh', icon = '', group = '[S]urround [H]ighlight' },
+      { 'sa', icon = '', group = '[s]urround [a]dd' },
+      { 'sd', icon = '', group = '[s]urround [d]elete' },
+      { 'sr', icon = '', group = '[s]urround [r]eplace' },
+      { 'sh', icon = '', group = '[s]urround [h]ighlight' },
     }
   end,
 }

@@ -14,20 +14,18 @@ return {
           require('notebook-navigator').move_cell 'u'
         end,
       },
-      { '<leader>jc', "<cmd>lua require('notebook-navigator').run_cell()<cr>" },
+      { '<leader>Nr', "<cmd>lua require('notebook-navigator').run_cell()<cr>" },
       -- { "<leader>", "<cmd>lua require('notebook-navigator').run_and_move()<cr>" },
     },
     dependencies = {
       'echasnovski/mini.comment',
       'hkupty/iron.nvim', -- repl provider
-      -- "akinsho/toggleterm.nvim", -- alternative repl provider
-      -- "benlubas/molten-nvim", -- alternative repl provider
       'anuvyklack/hydra.nvim',
     },
     event = 'VeryLazy',
     config = function()
       local nn = require 'notebook-navigator'
-      nn.setup { activate_hydra_keys = '<leader>jh' }
+      nn.setup { activate_hydra_keys = '<leader>Nh' }
     end,
   },
 }
