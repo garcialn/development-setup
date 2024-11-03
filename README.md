@@ -1,5 +1,5 @@
 # Development Setup Configurations
-Configuration and dot-files for fast and easy development setup of the following tools:
+Configuration and dotfiles for fast and easy development setup of the following tools:
 - zsh
 - starship
 - wezterm
