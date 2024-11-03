@@ -265,15 +265,15 @@ themes {
    dracoola {
         fg "#bed7dc"
         bg "#282a36"
-        red "#ff5555"
+        red "#ff0075"
         green "#50fa7b"
-        yellow "#ffeb55"
+        yellow "#6499E9"
         blue "#6499e9"
         magenta "#ff79c6"
         cyan "#6fedd6"
         black "#1e1e1e"
         white "#ffffff"
-        orange "#ffc700"
+        orange "#fffa62"
     }
     nightfox {
       bg "#192330"
