@@ -1,13 +1,13 @@
 # Development Setup Configurations
 Configuration and dot-files for fast and easy development setup of the following tools:
-- ZSH
-- Starship
-- Wezterm
-- Nvim
-- Zellij
-- Tmux
-- Espanso
-- DVC
+- zsh
+- starship
+- wezterm
+- nvim
+- zellij
+- tmux
+- espanso
+- kanata
 ---
-Use `sudo apt install` to install `nala`, `zoxide`, `lsd`, `zinit` and `stow`.
+Install `nala`, `zoxide`, `lsd`, `zinit`, `atuin`, `bat` and `stow` for better experience (in my opinion).
 After that, use the command `stow */` to create the correct symlinks.

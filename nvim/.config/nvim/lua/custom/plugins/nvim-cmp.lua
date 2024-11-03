@@ -37,8 +37,14 @@ return {
           end,
         },
         window = {
-          completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
+          completion = cmp.config.window.bordered({
+            max_width = 50,
+            max_height = 10
+          }),
+          documentation = cmp.config.window.bordered({
+            max_width = 50,
+            max_height = 10
+          }),
         },
         mapping = cmp.mapping.preset.insert {
           ['<C-k>'] = cmp.mapping.select_prev_item(), -- previous suggestion
