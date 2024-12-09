@@ -273,7 +273,7 @@ themes {
         cyan "#6fedd6"
         black "#1e1e1e"
         white "#ffffff"
-        orange "#fffa62"
+        orange "#89b4fa"
     }
     nightfox {
       bg "#192330"
