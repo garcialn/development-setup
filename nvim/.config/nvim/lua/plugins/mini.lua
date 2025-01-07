@@ -3,7 +3,11 @@ return {
   'echasnovski/mini.nvim',
   version = false,
   config = function()
-    require('mini.splitjoin').setup()
+    require('mini.splitjoin').setup({
+      mappings = {
+          toggle = 's-j',
+      }
+    })
     --    -- Toggle join and split lines inside block
 
     -- require('mini.bufremove').setup()

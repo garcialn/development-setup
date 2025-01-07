@@ -18,14 +18,18 @@ return {
     -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
     -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
     -- See the full "keymap" documentation for information on defining your own keymap.
-    keymap = { preset = 'enter' },
+    keymap = {
+      preset = 'enter',
+      ['<Tab>'] = { 'select_next', 'fallback' },
+      ['<S-Tab>'] = { 'select_prev', 'fallback' },
+    },
 
     completion = {
-      list = { selection = 'auto_insert' },
-      menu = { border = 'solid' },
-      documentation = { window = { border = 'solid' } },
+      list = { selection = 'manual' },
+      menu = { border = 'single' },
+      documentation = { window = { border = 'single' } },
     },
-    signature = { window = { border = 'solid' } },
+    signature = { window = { border = 'single' } },
     appearance = {
       -- Sets the fallback highlight groups to nvim-cmp's highlight groups
       -- Useful for when your theme doesn't support blink.cmp
@@ -33,7 +37,7 @@ return {
       use_nvim_cmp_as_default = true,
       -- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
       -- Adjusts spacing to ensure icons are aligned
-      nerd_font_variant = 'normal',
+      nerd_font_variant = 'mono',
     },
 
     -- Default list of enabled providers defined so that you can extend it
