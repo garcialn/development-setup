@@ -9,7 +9,7 @@ return {
     -- require('mini.bufremove').setup()
     --    -- Buffer delete
 
-    require('mini.indentscope').setup()
+    -- require('mini.indentscope').setup()
     --    -- Indentation scope
 
     require('mini.pairs').setup()

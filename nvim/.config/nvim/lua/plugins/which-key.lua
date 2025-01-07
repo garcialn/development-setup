@@ -60,7 +60,6 @@ return {
     local wk = require 'which-key'
     wk.add {
       -- [LEADER] mappings
-      { '<leader>c', icon = ' ', group = '[c]ode' },
       { '<leader>d', icon = '󰈙 ', group = '[d]ocument' },
       { '<leader>r', icon = '󰑕 ', group = '[r]ename' },
       { '<leader>s', icon = ' ', group = '[s]earch' },
@@ -76,6 +75,8 @@ return {
         mode = { 'n', 'v' }, -- NORMAL and VISUAL mode
         { '<leader>h', icon = ' ', group = '[h]arpoon' }, -- no need to specify mode since it's inherited
         { '<leader>g', icon = ' ', group = '[g]itsigns' }, -- no need to specify mode since it's inherited
+        { '<leader>c', icon = ' ', group = '[c]ode' },
+        { '<leader>S', icon = '󱥰 ', group = '[S]nack' },
       },
       -- [S]urrounding key Maps
       { 'sa', icon = '', group = '[s]urround [a]dd' },

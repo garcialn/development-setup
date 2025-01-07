@@ -56,7 +56,7 @@ return {
 
     -- TODO: Add description to which-key
     -- Align cursor columns.
-    vim.keymap.set('n', '<leader>a', mc.alignCursors)
+    vim.keymap.set('n', '<c-a>', mc.alignCursors)
 
     -- TODO: "S" is the keymap for split block
     -- Split visual selections by regex.
@@ -68,10 +68,10 @@ return {
 
     -- match new cursors within visual selections by regex.
     vim.keymap.set('v', 'M', mc.matchCursors) -- Rotate visual selection contents.
-    vim.keymap.set('v', '<leader>t', function()
+    vim.keymap.set('v', '<c-t>', function()
       mc.transposeCursors(1)
     end)
-    vim.keymap.set('v', '<leader>T', function()
+    vim.keymap.set('v', '<c-T>', function()
       mc.transposeCursors(-1)
     end)
 
