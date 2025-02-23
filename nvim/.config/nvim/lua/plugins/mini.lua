@@ -3,17 +3,24 @@ return {
   'echasnovski/mini.nvim',
   version = false,
   config = function()
-    require('mini.splitjoin').setup({
+    require('mini.splitjoin').setup {
       mappings = {
-          toggle = 's-j',
-      }
-    })
+        toggle = '<C>-s',
+      },
+    }
     --    -- Toggle join and split lines inside block
 
     -- require('mini.bufremove').setup()
     --    -- Buffer delete
 
-    -- require('mini.indentscope').setup()
+    -- require('mini.indentscope').setup {
+    --   draw = {
+    --     delay = 100,
+    --   },
+    --   options = {
+    --     try_as_border = true,
+    --   },
+    -- }
     --    -- Indentation scope
 
     require('mini.pairs').setup()

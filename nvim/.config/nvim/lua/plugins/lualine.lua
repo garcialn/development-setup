@@ -8,7 +8,7 @@ return {
         options = {
           icons_enabled = true,
           globalstatus = true,
-          theme = 'vscode', --'catppuccin-mocha'
+          theme = 'dracula', --'vscode', 'catppuccin-mocha'
           component_separators = { left = '|', right = '|' },
           section_separators = { left = '', right = '' },
           refresh = {

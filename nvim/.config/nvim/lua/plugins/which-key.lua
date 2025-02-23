@@ -65,7 +65,6 @@ return {
       { '<leader>s', icon = ' ', group = '[s]earch' },
       { '<leader>w', icon = ' ', group = '[w]orkspace' },
       { '<leader>t', icon = ' ', group = '[t]oggle' },
-      { '<leader>N', icon = ' ', group = '[N]otebook' },
       { '<leader>n', icon = '󰊢 ', group = '[n]eogit' },
       { '<leader>x', icon = '󰟃 ', group = 'E[x]tras' },
       {

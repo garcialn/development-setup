@@ -1,6 +1,6 @@
 # Warning: This config does not include keys that have an unset value
 
-# $all is shorthand for $username$hostname$localip$shlvl$singularity$kubernetes$nats$directory$vcsh$fossil_branch$fossil_metrics$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch$pijul_channel$docker_context$package$bun$c$cmake$cobol$daml$dart$deno$dotnet$elixir$elm$erlang$fennel$gleam$golang$gradle$haskell$haxe$helm$java$julia$kotlin$lua$nim$nodejs$ocaml$odin$opa$perl$php$pulumi$purescript$python$quarto$raku$rlang$red$ruby$rust$scala$solidity$swift$terraform$typst$vlang$vagrant$zig$buf$guix_shell$nix_shell$conda$meson$spack$memory_usage$aws$gcloud$openstack$azure$direnv$env_var$crystal$custom$sudo$cmd_duration$line_break$jobs$battery$time$status$container$os$shell$character
+# $all is shorthand for $username$hostname$localip$shlvl$singularity$kubernetes$nats$directory$vcsh$fossil_branch$fossil_metrics$tgit_branch$git_commit$git_state$git_metrics$git_status$hg_branch$pijul_channel$docker_context$package$bun$c$cmake$cobol$daml$dart$deno$dotnet$elixir$elm$erlang$fennel$gleam$golang$gradle$haskell$haxe$helm$java$julia$kotlin$lua$nim$nodejs$ocaml$odin$opa$perl$php$pulumi$purescript$python$quarto$raku$rlang$red$ruby$rust$scala$solidity$swift$terraform$typst$vlang$vagrant$zig$buf$guix_shell$nix_shell$conda$meson$spack$memory_usage$aws$gcloud$openstack$azure$direnv$env_var$crystal$custom$sudo$cmd_duration$line_break$jobs$battery$time$status$container$os$shell$character
 
 "$schema" = "https://starship.rs/config-schema.json"
 format = """
@@ -12,19 +12,64 @@ scan_timeout = 500
 command_timeout = 10000
 add_newline = true
 follow_symlinks = true
-palette = "vscode"
+palette = "dracula"
 
 [palettes.vscode]
 red = "#E62929"
 blue = "#6499E9"
+light_blue = "#A1D6CB"
 yellow = "#FFFF80"
 purple = "#836FFF"
+light_purple = "#A19AD3"
 green = "#00FF9A"
 cyan = "#5DEBD7"
 orange = "#FF7F3E"
 light_orange = "#EF9C66"
 grey = "#A9A9A9"
 olive = "#FCE700"
+light_yellow = "#FFF574"
+pink = "#C85DB2"
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
+[palettes.dracula]
+background = "#282a36"
+current_line = "#44475a"
+foreground = "#f8f8f2"
+comment = "#6272a4"
+cyan = "#8be9fd"
+green = "#50fa7b"
+orange = "#ffb86c"
+pink = "#ff79c6"
+purple = "#bd93f9"
+red = "#ff5555"
+yellow = "#f1fa8c"
 
 [profiles]
 
@@ -94,8 +139,8 @@ commands = [["cc", "--version"], ["gcc", "--version"], ["clang", "--version"]]
 
 [character]
 format = "$symbol "
-success_symbol = "[->](bold blink green)"
-error_symbol = "[->](bold blink red)"
+success_symbol = "[ ->](bold blink green)"
+error_symbol = "[ ->](bold blink red)"
 vimcmd_symbol = "[<-](bold green)"
 vimcmd_visual_symbol = "[<-](bold yellow)"
 vimcmd_replace_symbol = "[<-](bold purple)"
@@ -199,7 +244,7 @@ fish_style_pwd_dir_length = 3
 use_logical_path = true
 format = "[/$path]($style)[$read_only]($read_only_style) "
 repo_root_format = "[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) "
-style = "underline cyan bold"
+style = "underline purple bold"
 disabled = false
 read_only = " "
 read_only_style = "red"
@@ -212,7 +257,7 @@ use_os_path_sep = true
 [direnv]
 format = "[$symbol$loaded/$allowed]($style) "
 symbol = "direnv "
-style = "bold orange"
+style = "bold ligh_yellow"
 disabled = true
 detect_extensions = []
 detect_files = [".envrc"]
@@ -326,8 +371,8 @@ detect_env_vars = []
 [git_branch]
 format = "[$symbol$branch: ]($style)"
 symbol = " "
-style = "bold yellow"
-truncation_length = 9223372036854775807
+style = "bold pink"
+truncation_length = 42
 truncation_symbol = "…"
 only_attached = true
 always_show_remote = true
@@ -368,7 +413,7 @@ disabled = true
 
 [git_status]
 format = '([$all_status$ahead_behind]($style)) '
-style = "bold olive"
+style = "bold yellow"
 stashed = " "
 ahead = "󰜸 "
 behind = "󰜯 "
@@ -397,7 +442,7 @@ detect_folders = []
 [golang]
 format = "via [$symbol($version )]($style)"
 version_format = "v${raw}"
-symbol = "🐹 "
+symbol = " "
 style = "bold cyan"
 disabled = false
 not_capable_style = "bold red"
@@ -653,7 +698,7 @@ disabled = false
 
 [os]
 format = "[$symbol]($style)"
-style = "cyan"
+style = "purple"
 disabled = false
 
 [os.symbols]
@@ -663,7 +708,7 @@ AlmaLinux = "💠 "
 Alpine = "🏔️ "
 Amazon = "🙂 "
 Android = "🤖 "
-Arch = "🎗️ "
+Arch = "󰣇 "
 Artix = "🎗️ "
 CentOS = "💠 "
 Debian = "🌀 "
@@ -842,7 +887,7 @@ detect_variables = ["RUBY_VERSION", "RBENV_VERSION"]
 [rust]
 format = "[$symbol($version )]($style)"
 version_format = "v${raw}"
-symbol = " "
+symbol = "󱘗 "
 style = "bold orange"
 disabled = false
 detect_extensions = ["rs"]

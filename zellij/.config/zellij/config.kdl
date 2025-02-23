@@ -222,7 +222,7 @@ plugins {
 
 // Choose the path to override cwd that zellij will use for opening new panes
 //
-// default_cwd ""
+default_cwd "~/Modelos/"
 
 // Toggle between having pane frames around the panes
 // Options:
@@ -262,7 +262,21 @@ plugins {
 // Once these themes are defined, one of them should be selected in the "theme" section of this file
 //
 themes {
-   dracoola {
+    dracula_c {
+        fg 248 248 242
+        bg 40 42 54
+        black  30 31 41
+        red 255 85 85
+        green 80 250 123
+        yellow 241 250 140
+        blue 98 114 164
+        magenta 255 121 198
+        cyan 139 233 253
+        white 255 255 255
+        orange 255 184 108
+    }
+
+   dark+ {
         fg "#bed7dc"
         bg "#282a36"
         red "#ff0075"
@@ -346,7 +360,7 @@ themes {
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "dracoola"
+theme "dracula_c"
 // The name of the default layout to load on startup
 // Default: "default"
 //

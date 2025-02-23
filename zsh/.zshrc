@@ -103,6 +103,9 @@ alias c="clear"
 alias zel="zellij"
 alias zj="zellij"
 alias anal="nala"
+alias docker="podman"
+# alias nix="nix-env"
+# alias nx="nix-env"
 
 # Tmux plugin configuration
 export ZSH_TMUX_AUTOSTART="true"
@@ -219,3 +222,14 @@ export PATH=$PATH:/usr/local/nvim/bin
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# ZIG Config
+export PATH=$PATH:/usr/local/zig
+
+# Ghostty Config
+export PATH=$PATH:/usr/local/ghostty/zig-out/bin/
+
+#GO Config
+# export GOPATH=/usr/local/go
+export PATH=$PATH:/usr/local/go/bin/
+# export GOCACHE="$(mktemp -d)"
