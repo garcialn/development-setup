@@ -43,7 +43,7 @@ return {
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer', 'dadbod', 'emoji' },
+      default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer', 'dadbod', 'emoji', 'markdown' },
       providers = {
         -- TODO: Check how to add correctly the following providers
         lsp = {
@@ -77,6 +77,11 @@ return {
           name = 'Dadbod',
           module = 'vim_dadbod_completion.blink',
           score_offset = 20,
+        },
+        markdown = {
+          name = 'RenderMarkdown',
+          module = 'render-markdown.integ.blink',
+          -- fallback = { 'lsp' },
         },
       },
     },
