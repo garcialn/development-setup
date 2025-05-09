@@ -76,12 +76,28 @@ return {
         { '<leader>g', icon = ' ', group = '[g]itsigns' }, -- no need to specify mode since it's inherited
         { '<leader>c', icon = ' ', group = '[c]ode' },
         { '<leader>S', icon = '󱥰 ', group = '[S]nack' },
+        { '<leader>H', icon = ' ', group = '[H]url' }, -- http request test
       },
       -- [S]urrounding key Maps
       { 'sa', icon = '', group = '[s]urround [a]dd' },
       { 'sd', icon = '', group = '[s]urround [d]elete' },
       { 'sr', icon = '', group = '[s]urround [r]eplace' },
       { 'sh', icon = '', group = '[s]urround [h]ighlight' },
+      -- [f]lash
+      { 'fw', icon = '', group = '[f]ind [w]ord' },
+      { 'ft', icon = '', group = '[f]ind [t]reesitter' },
+      { 'fr', icon = '', group = '[f]ind [r]emote' },
+      { 'fs', icon = '', group = '[f]ind [s]earch' },
+      -- [H]url
+      { '<leader>HA', '<cmd>HurlRunner<CR>', desc = 'Run All requests' },
+      { '<leader>Ha', '<cmd>HurlRunnerAt<CR>', desc = 'Run Api request' },
+      { '<leader>He', '<cmd>HurlRunnerToEntry<CR>', desc = 'Run Api request to entry' },
+      { '<leader>HE', '<cmd>HurlRunnerToEnd<CR>', desc = 'Run Api request from current entry to end' },
+      { '<leader>Hm', '<cmd>HurlToggleMode<CR>', desc = 'Hurl Toggle Mode' },
+      { '<leader>Hv', '<cmd>HurlVerbose<CR>', desc = 'Run Api in verbose mode' },
+      { '<leader>HV', '<cmd>HurlVeryVerbose<CR>', desc = 'Run Api in very verbose mode' },
+      -- Run Hurl request in visual mode
+      { '<leader>H', ':HurlRunner<CR>', desc = 'Hurl Runner', mode = 'v' },
     }
   end,
 }

@@ -54,6 +54,15 @@ return {
     scroll = { enabled = true },
     statuscolumn = { enabled = true },
     words = { enabled = true },
+    -- BUG: Both explorer and picker won't work cause of conflic with current fd-find PopOS 22.04 version, so when using newer sys, this can be fixed. When this happen, you can disable Yazi
+    -- explorer = {
+    --   ---@class snacks.explorer.Config
+    --   enabled = true,
+    --   {
+    --     replace_netrw = true, -- Replace netrw with the snacks explorer
+    --   },
+    -- },
+    -- picker = { enabled = true },
   },
   keys = {
     {

@@ -204,9 +204,6 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls $realpath'
 
 eval "$(atuin init zsh)"
 
-# fzf modifications
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # Yazi modifications
 function yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
@@ -233,3 +230,8 @@ export PATH=$PATH:/usr/local/ghostty/zig-out/bin/
 # export GOPATH=/usr/local/go
 export PATH=$PATH:/usr/local/go/bin/
 # export GOCACHE="$(mktemp -d)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"

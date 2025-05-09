@@ -1,5 +1,6 @@
 # INFO: UI Config
 theme = "Dracula"
+# "Dracula"
 # "catppuccin-mocha"
 # "Dark+"
 # window-inherit-font-size = true

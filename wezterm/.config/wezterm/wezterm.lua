@@ -3,7 +3,7 @@ local wezterm = require("wezterm")
 
 local config = {}
 config.window_decorations = "TITLE | RESIZE"
-config.color_scheme = "Vs Code Dark+ (Gogh)"
+config.color_scheme = "Dracula"
 -- "Catppuccin Mocha (Gogh)"
 -- "Catppuccin Mocha"
 -- config.window_background_opacity = 0.1
